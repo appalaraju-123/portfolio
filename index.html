@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Korada Appala Raju | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfbf9;--surface:#fff;--ink:#1b2333;--muted:#5b6475;--line:#d9dce3;--accent:#1f3a68;--tint:#eef2f8;
+--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Source Sans 3",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151c;--surface:#181c25;--ink:#e8eaf0;--muted:#a0a8b8;--line:#2c3240;--accent:#8fb0e8;--tint:#1d2330}}
+:root[data-theme="dark"]{--bg:#12151c;--surface:#181c25;--ink:#e8eaf0;--muted:#a0a8b8;--line:#2c3240;--accent:#8fb0e8;--tint:#1d2330}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30}
+header{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:12px;padding-bottom:12px}
+.brand{font-family:var(--serif);font-weight:600;font-size:18px;text-decoration:none;color:var(--ink);white-space:nowrap}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{color:var(--muted);text-decoration:none;font-size:15px;padding:6px 11px;border-radius:3px;white-space:nowrap}
+nav a:hover{color:var(--accent)}
+nav a.on{color:var(--accent);background:var(--tint);font-weight:600}
+.hero{padding:88px 0 72px}
+.hero .wrap{display:grid;gap:8px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,8vw,58px);line-height:1.1;margin:0;letter-spacing:-.01em}
+.role{font-family:var(--serif);font-size:clamp(20px,4vw,26px);color:var(--accent);margin:4px 0 16px}
+.hero p.lead{max-width:60ch;margin:0 0 24px;color:var(--muted);font-size:18px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 20px;border:1px solid var(--accent);border-radius:3px;text-decoration:none;font-weight:600;font-size:16px;background:none;font-family:inherit;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn.ghost{color:var(--accent)}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+.facts div{font-size:15px;color:var(--muted)}
+.facts b{display:block;font-family:var(--serif);font-size:24px;color:var(--ink);font-weight:600}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--surface)}
+h2{font-family:var(--serif);font-size:30px;font-weight:600;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 32px;max-width:60ch}
+h3{font-family:var(--serif);font-size:21px;font-weight:600;margin:0 0 4px}
+.meta{color:var(--muted);font-size:15px;margin:0 0 12px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about p{margin:0 0 16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:24px}
+section.alt .card{background:var(--bg)}
+.card h3{font-size:18px}
+.card p,.card li{font-size:16px;margin:0 0 6px}
+.card ul{padding-left:18px;margin:0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tab{padding:7px 16px;border:1px solid var(--line);background:none;border-radius:3px;font:inherit;font-size:15px;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid var(--line);background:var(--surface);padding:5px 14px;border-radius:99px;font-size:15px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card .link{font-size:15px;font-weight:600;display:inline-block;margin-top:10px}
+.tl{border-left:2px solid var(--line);margin:0 0 0 6px;padding-left:28px;display:grid;gap:32px}
+.tl>div{position:relative}
+.tl>div::before{content:"";position:absolute;left:-36px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.tl p{margin:0}
+.score{font-family:var(--serif);font-weight:600;color:var(--accent)}
+.contact dl{display:grid;grid-template-columns:110px 1fr;gap:10px 16px;margin:0 0 28px}
+.contact dt{font-weight:600}.contact dd{margin:0;overflow-wrap:anywhere}
+footer{padding:28px 0 44px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#top{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--accent);font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+#top.show{opacity:1;pointer-events:auto}
+@media (max-width:760px){.about,.grid2,.grid3{grid-template-columns:1fr}.hero{padding:56px 0 48px}section{padding:48px 0}.contact dl{grid-template-columns:1fr;gap:2px}.contact dd{margin-bottom:12px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><div class="wrap">
+<a class="brand" href="#home">K. Appala Raju</a>
+<nav aria-label="Sections">
+<a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certs">Certifications</a><a href="#education">Education</a><a href="#contact">Contact</a>
+</nav></div></header>
+
+<main>
+<section id="home" class="hero" style="border:0;padding-bottom:72px"><div class="wrap">
+<h1>Korada Appala Raju</h1>
+<p class="lead">Computer Science Engineering student with a strong foundation in Java and programming fundamentals. I build software in teams, solve problems step by step, and keep learning new technologies.</p>
+<div class="btns"><a class="btn primary" href="#projects">View projects</a><a class="btn ghost" href="#contact">Contact me</a><a class="btn ghost" href="https://github.com/appalaraju-123" target="_blank" rel="noopener">GitHub</a><a class="btn ghost" href="https://www.linkedin.com/in/korada-appala-raju-418b343a8" target="_blank" rel="noopener">LinkedIn</a></div>
+<div class="facts"><div><b>8.7</b>B.Tech CGPA</div><div><b>Java</b>Main language</div><div><b>3+</b>AI courses completed</div></div>
+</div></section>
+
+<section id="about" class="alt"><div class="wrap">
+<h2>About me</h2>
+<p class="sub">A student developer focused on writing clear, working code.</p>
+<div class="about">
+<div>
+<p>I am a motivated Computer Science Engineering student at Lendi Institute of Engineering and Technology, Vizianagaram. My strongest area is Java, along with C and Python, backed by Data Structures and Algorithms and Object-Oriented Programming.</p>
+<p>I have worked on academic and team-based projects, including an AI-based desktop debugger and a food ordering app. I have also completed courses on Claude AI, prompt engineering and agentic AI.</p>
+<p>I am looking for opportunities where I can apply my skills, learn from experienced engineers, and contribute to the team.</p>
+</div>
+<div class="card"><h3>Quick details</h3>
+<p><b>Location:</b> Vizianagaram, Andhra Pradesh, India</p>
+<p><b>Languages:</b> English, Telugu</p>
+<p><b>Degree:</b> B.Tech, Computer Science and Engineering</p></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<p class="sub">Select a category to see the tools I use.</p>
+<div class="tabs" role="tablist" id="tabs">
+<button class="tab" role="tab" aria-selected="true" data-k="all">All</button>
+<button class="tab" role="tab" aria-selected="false" data-k="prog">Programming</button>
+<button class="tab" role="tab" aria-selected="false" data-k="core">Core concepts</button>
+<button class="tab" role="tab" aria-selected="false" data-k="web">Web and databases</button>
+<button class="tab" role="tab" aria-selected="false" data-k="tools">Tools</button>
+</div>
+<div class="chips" id="chips"></div>
+</div></section>
+
+<section id="projects" class="alt"><div class="wrap">
+<h2>Projects</h2>
+<p class="sub">Academic and personal work.</p>
+<div class="grid2">
+<div class="card"><h3>AI-Based Intelligent Desktop Debugger</h3><p class="meta">Academic project, team-based</p>
+<ul><li>Detects and classifies programming errors and recommends automated fixes.</li>
+<li>Modules for code editing, compilation, execution, error detection, AI-based analysis and debugging reports.</li>
+<li>Analyzed execution results to support faster error identification and resolution.</li></ul></div>
+<div class="card"><h3>Food Ordering App</h3><p class="meta">Personal project</p>
+<p>A food ordering app, available in my public GitHub repository.</p>
+<a class="link" href="https://github.com/appalaraju-123/food-app" target="_blank" rel="noopener">View on GitHub</a></div>
+</div></div></section>
+
+<section id="certs"><div class="wrap">
+<h2>Certifications</h2>
+<p class="sub">Courses I have completed alongside my degree.</p>
+<div class="grid3">
+<div class="card"><h3>Claude AI</h3><p class="meta">Anthropic</p></div>
+<div class="card"><h3>Prompt Engineering</h3><p class="meta">Course certification</p></div>
+<div class="card"><h3>Agentic AI</h3><p class="meta">Course certification</p></div>
+<div class="card"><h3>Internet of Things (IoT)</h3><p class="meta">NPTEL</p></div>
+<div class="card"><h3>Joy of Python</h3><p class="meta">NPTEL</p></div>
+</div></div></section>
+
+<section id="education" class="alt"><div class="wrap">
+<h2>Education</h2>
+<p class="sub">My academic path, most recent first.</p>
+<div class="tl">
+<div><h3>B.Tech, Computer Science and Engineering</h3><p>Lendi Institute of Engineering and Technology, Vizianagaram</p><p class="meta">CGPA <span class="score">8.7 / 10</span></p></div>
+<div><h3>Intermediate (Class XII)</h3><p>Sri Chaitanya Junior College, Visakhapatnam</p><p class="meta">Percentage <span class="score">95%</span></p></div>
+<div><h3>Secondary School Certificate (Class X)</h3><p>AP Model School, Andhra Pradesh</p><p class="meta">Percentage <span class="score">73%</span></p></div>
+</div></div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Contact</h2>
+<p class="sub">Open to internships and entry-level opportunities.</p>
+<dl>
+<dt>Email</dt><dd><a href="mailto:koradaraju2007@gmail.com">koradaraju2007@gmail.com</a></dd>
+<dt>Phone</dt><dd><a href="tel:+916304847374">6304847374</a></dd>
+<dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/korada-appala-raju-418b343a8" target="_blank" rel="noopener">linkedin.com/in/korada-appala-raju-418b343a8</a></dd>
+<dt>GitHub</dt><dd><a href="https://github.com/appalaraju-123" target="_blank" rel="noopener">github.com/appalaraju-123</a></dd>
+<dt>Location</dt><dd>Vizianagaram, Andhra Pradesh, India</dd>
+</dl>
+<div class="btns"><a class="btn primary" href="mailto:koradaraju2007@gmail.com">Send an email</a><button class="btn ghost" id="copy" type="button">Copy email address</button></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>&copy; Korada Appala Raju</span><span>Portfolio</span></div></footer>
+<button id="top" type="button" aria-label="Back to top">&uarr;</button>
+
+<script>
+var S={prog:["Java","C","Python"],core:["Data Structures and Algorithms","Object-Oriented Programming","Problem Solving"],web:["HTML","CSS","SQL","MongoDB"],tools:["Git","GitHub","VS Code"]};
+var chips=document.getElementById("chips");
+function show(k){chips.innerHTML="";(k==="all"?[].concat(S.prog,S.core,S.web,S.tools):S[k]).forEach(function(t){var s=document.createElement("span");s.textContent=t;chips.appendChild(s)})}
+show("all");
+document.getElementById("tabs").addEventListener("click",function(e){var b=e.target.closest(".tab");if(!b)return;
+document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",t===b?"true":"false")});show(b.dataset.k)});
+var links=[].slice.call(document.querySelectorAll("nav a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+var bar=document.getElementById("bar"),toTop=document.getElementById("top");
+function onScroll(){var y=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+bar.style.width=(h>0?y/h*100:0)+"%";toTop.classList.toggle("show",y>500);
+var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<120)cur=i});
+links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+var on=links[cur];if(on&&on.scrollIntoView&&on.parentNode.scrollWidth>on.parentNode.clientWidth){on.parentNode.scrollLeft=on.offsetLeft-20}}
+window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+toTop.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+document.getElementById("copy").addEventListener("click",function(){var b=this,t="koradaraju2007@gmail.com";
+try{navigator.clipboard.writeText(t).then(function(){b.textContent="Copied"},function(){b.textContent=t})}catch(e){b.textContent=t}});
+</script>
+</body>
+</html>
